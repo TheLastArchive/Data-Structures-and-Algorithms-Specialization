@@ -15,12 +15,8 @@ def max_sliding_window(sequence, window_size):
     window = deque(sequence[:window_size])
     queue = deque(sequence[window_size:])
     maximums = []
-    curr_max = 0
-    while True:
-        #This will only happen once
-        if curr_max == 0:
-            curr_max = max(window)
-
+    curr_max = max(window)
+    while True:    
         maximums.append(curr_max)
         #If the queue is empty, all checks have been completed
         if len(queue) == 0: 
